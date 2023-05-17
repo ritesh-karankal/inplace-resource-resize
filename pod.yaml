@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: testpod
+spec:
+  containers:
+  - name: test-ctr
+    image: skiibum/testpod:qos
+    command: ["tail","-f", "/dev/null"]
+    resizepolicy: 
+      -resourceName: "memory"
+       restartPolicy: "RestartContainer"
+    resources:
+      requests:
+        cpu: "400m"
+        memory: "500Mi"
+      limits:
+        cpu: "100m"
+        memory: "200Mi"
