@@ -1,0 +1,1 @@
+# inplace-resource-resize
